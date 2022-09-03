@@ -5,6 +5,8 @@ const bicycles = require('./data/data.json');
 
 app.set('view engine', 'ejs');
 
+app.use(express.static('public'));
+
 app.get('/', (req, res) => {
     return res.render('bicycles');
 });
