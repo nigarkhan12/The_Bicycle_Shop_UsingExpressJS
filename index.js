@@ -15,8 +15,10 @@ app.get('/', (req, res) => {
 app.get('/bicycle', (req, res) => { 
     console.log(req.query.id);
     const bicycle = bicycles.find(b => b.id === req.query.id);
-
-    return res.render('overview');
+    console.log(bicycle);
+    return res.render('overview', {
+        bicycle
+    });
 })
 
 app.listen(3000, () => console.log('Server is running at Port 3000'));
